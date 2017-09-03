@@ -4,7 +4,7 @@
 
     <interface>
         <!-- Row item selection handlers -->
-        <field id="CategoryListItemSelected" type="intarray" alwaysnotify="true" alias="CategoryList.rowItemSelected"/>
+        <field id="buttonClicked" type="integer" alwaysnotify="true" alias="button.itemSelected" />
         
         <!-- is mask currently covering the screen -->
         <field id="maskIsVisible" type="boolean" />
@@ -35,25 +35,22 @@
             width="1280"
             height="720"
             color="0x000000"
-            opacity="0.72"
+            opacity="0.8"
         />
 
         <LabelList
           id = "button"
           vertFocusAnimationStyle = "floatingFocus"
-          drawFocusFeedback = "true"
-          drawFocusFeedbackOnTop = "false"
-          focusBitmapUri = "pkg:/Images/focus_button.9.png"
-          focusFootprintBitmapUri="pkg:/Images/focus_empty_square.png"
+          drawFocusFeedback = "false"
           color = "0xFFFFFFFF"
-          focusedColor = "0xffffffFF"
+          focusedColor = "0xE40090FF"
           textHorizAlign = "center"
-          itemSize = "[150, 40]"
-          translation = "[600,310]"
+          itemSize = "[1280, 60]"
+          translation = "[0,310]"
           itemSpacing = "[0,10]">
 
           <ContentNode role = "content">
-              <ContentNode title = "show mask" />
+              <ContentNode title = "SHOW DIALOG MASK" />
           </ContentNode>
         </LabelList>
 

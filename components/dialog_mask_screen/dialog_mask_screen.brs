@@ -1,24 +1,23 @@
 Function Init()
-    m.top.observeField("visible", "onVisibleChange")
-
+    ?"dialog_mask_screen init"
     m.button = m.top.findNode("button")
-
-    'm.createAccountButton = m.top.findNode("CreateAccountButton")
-    setButtonProperties(m)
+    
+    'setButtonProperties(m)
 
     m.mask = m.top.findNode("Mask")
     m.maskLabel = m.top.findNode("MaskLabel")
 
     'initial state
-    m.top.maskIsVisible     = false
+    m.top.maskIsVisible = false
 
+    m.top.observeField("buttonClicked", "OnButtonClick")
 End Function
 
 Function setButtonProperties(m)
     m.button.font = "font:LargeSystemFont"
-    m.button.font.size = m.button.font.size+12
+    m.button.font.size = m.button.font.size+24
     m.button.focusedFont = "font:LargeSystemFont"
-    m.button.focusedFont.size = m.button.focusedFont.size+12
+    m.button.focusedFont.size = m.button.focusedFont.size+48
 End Function
 
 'on create username screen next button click:'
@@ -27,7 +26,7 @@ Function OnButtonClick()
 end Function
 
 Function ShowMask(maskText)
-    m.nextButton.setFocus(false)
+    m.button.setFocus(false)
     m.top.setFocus(true)
     m.top.MaskLabelText = maskText
     AnimateToShowMask = m.top.FindNode("AnimateToShowMask")
@@ -36,7 +35,7 @@ Function ShowMask(maskText)
 end Function
 
 Function HideMask()
-    m.nextButton.setFocus(true)
+    m.button.setFocus(true)
     AnimateToHideMask = m.top.FindNode("AnimateToHideMask")
     AnimateToHideMask.control = "start"
     m.top.maskIsVisible = false
