@@ -1,8 +1,13 @@
+'******************************************************************
+' Author: Jason Dixon
+' Description: Home Scene 
+'******************************************************************
+
+'run initializaion requirements
 Function Init()
-    ?"dialog_mask_screen init"
     m.button = m.top.findNode("button")
     
-    'setButtonProperties(m)
+    setButtonProperties(m)
 
     m.mask = m.top.findNode("Mask")
     m.maskLabel = m.top.findNode("MaskLabel")
@@ -15,9 +20,9 @@ End Function
 
 Function setButtonProperties(m)
     m.button.font = "font:LargeSystemFont"
-    m.button.font.size = m.button.font.size+24
+    m.button.font.size = m.button.font.size
     m.button.focusedFont = "font:LargeSystemFont"
-    m.button.focusedFont.size = m.button.focusedFont.size+48
+    m.button.focusedFont.size = m.button.focusedFont.size+4
 End Function
 
 'on create username screen next button click:'

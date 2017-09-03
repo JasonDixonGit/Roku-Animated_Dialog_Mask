@@ -23,93 +23,93 @@
 
     <children>
 
-        <Poster
-            translation="[0,0]"
-            uri="pkg:/images/background.jpg"
-            width="1280"
-            height="720"
-        />
-
-        <Rectangle
-            translation="[0,0]"
-            width="1280"
-            height="720"
-            color="0x000000"
-            opacity="0.8"
-        />
-
-        <LabelList
-          id = "button"
-          vertFocusAnimationStyle = "floatingFocus"
-          drawFocusFeedback = "false"
-          color = "0xFFFFFFFF"
-          focusedColor = "0xE40090FF"
-          textHorizAlign = "center"
-          itemSize = "[1280, 60]"
-          translation = "[0,310]"
-          itemSpacing = "[0,10]">
-
-          <ContentNode role = "content">
-              <ContentNode title = "SHOW DIALOG MASK" />
-          </ContentNode>
-        </LabelList>
-
-
-        <Rectangle
-            id="Mask"
-            translation="[1300,0]"
-            width="1280"
-            height="720"
-            color="0x000000"
-            opacity="1"
-            visible = "true"
-        />
-
-        <Label 
-          id = "MaskLabel"
-          height = "44"
-          width = "1280"
-          font = "font:LargeSystemFont"
-          text = ""
-          horizAlign = "center"
-          vertAlign = "center"
-          translation = "[4000,330]" 
-          visible = "true"
-        />
-
-    <Animation 
-      id = "AnimateToShowMask"
-      duration = "1.5"
-      easeFunction = "inOutCubic" >
-
-      <Vector2DFieldInterpolator 
-        id = "MaskVector2D"
-        key = "[ 0.0, 1.0 ]" 
-        keyValue = "[ [1300,0], [0,0] ]"
-        fieldToInterp = "Mask.translation"
-
+      <Poster
+        translation="[0,0]"
+        uri="pkg:/images/background.jpg"
+        width="1280"
+        height="720"
       />
 
-      <Vector2DFieldInterpolator 
-        id = "MaskLabelVector2D"
-        key = "[ 0.0, 1.0 ]" 
-        keyValue = "[ [4000,330], [0,330] ]"
-        fieldToInterp = "MaskLabel.translation"
+      <Rectangle
+        translation="[0,0]"
+        width="1280"
+        height="720"
+        color="0x000000"
+        opacity="0.8"
       />
-    </Animation>
 
-    <Animation 
-      id = "AnimateToHideMask"
-      duration = "1.5"
-      easeFunction = "inOutCubic" >
+      <LabelList
+        id = "button"
+        vertFocusAnimationStyle = "floatingFocus"
+        drawFocusFeedback = "false"
+        color = "0xFFFFFFFF"
+        focusedColor = "0xE40090FF"
+        textHorizAlign = "center"
+        itemSize = "[1280, 60]"
+        translation = "[0,310]"
+        itemSpacing = "[0,10]">
 
-      <Vector2DFieldInterpolator 
-        id = "MaskVector2D"
-        key = "[ 0.0, 1.0 ]" 
-        keyValue = "[ [0,0],[1300,0] ]"
-        fieldToInterp = "Mask.translation"
+        <ContentNode role = "content">
+          <ContentNode title = "PRESS OK TO SHOW DIALOG MASK" />
+        </ContentNode>
+      </LabelList>
 
+
+      <Rectangle
+        id="Mask"
+        translation="[1300,0]"
+        width="1280"
+        height="720"
+        color="0x000000"
+        opacity="1"
+        visible = "true"
       />
+
+      <Label 
+        id = "MaskLabel"
+        height = "44"
+        width = "1280"
+        font = "font:LargeSystemFont"
+        text = ""
+        horizAlign = "center"
+        vertAlign = "center"
+        translation = "[4000,330]" 
+        visible = "true"
+      />
+
+      <Animation 
+        id = "AnimateToShowMask"
+        duration = "1.5"
+        easeFunction = "inOutCubic" >
+
+        <Vector2DFieldInterpolator 
+          id = "MaskVector2D"
+          key = "[ 0.0, 1.0 ]" 
+          keyValue = "[ [1300,0], [0,0] ]"
+          fieldToInterp = "Mask.translation"
+
+        />
+
+        <Vector2DFieldInterpolator 
+          id = "MaskLabelVector2D"
+          key = "[ 0.0, 1.0 ]" 
+          keyValue = "[ [4000,330], [0,330] ]"
+          fieldToInterp = "MaskLabel.translation"
+        />
+      </Animation>
+
+      <Animation 
+        id = "AnimateToHideMask"
+        duration = "1.5"
+        easeFunction = "inOutCubic" >
+
+        <Vector2DFieldInterpolator 
+          id = "MaskVector2D"
+          key = "[ 0.0, 1.0 ]" 
+          keyValue = "[ [0,0],[1300,0] ]"
+          fieldToInterp = "Mask.translation"
+
+        />
 
       <Vector2DFieldInterpolator 
         id = "MaskLabelVector2D"

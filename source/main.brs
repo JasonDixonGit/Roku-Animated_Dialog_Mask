@@ -14,7 +14,8 @@ sub LaunchHomeScene()
     homeScene = screen.CreateScene("HomeScene")
     screen.show()
     
-        while(true)
+    'keep-alive loop in main thread. Channel closes if this breaks.'
+    while(true)
         msg = wait(0, m.port)
         msgType = type(msg)
         if msgType = "roSGNodeEvent"
