@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- main node which handles home screen children -->
+<component name="HomeScene" extends="Scene">
+
+    <interface>
+        <!-- global secondarycolor setting -->
+        <field id="globalSecondaryColor" type="string" />
+    </interface>
+
+    <!-- Main Scenegraph thread handler -->
+    <script type="text/brightscript" uri="pkg:/components/HomeScene/HomeScene.brs" />
+
+    <!-- rendevous to Main App thread -->
+    <script type="text/brightscript" uri="pkg:/source/main.brs" />
+
+    <children>
+
+        <!-- screen with button to demonstrate dialog mask functionality -->
+        <dialog_mask_screen
+            id="dialog_mask_screen"
+            visible="true"
+            translation="[0,0]"
+        />
+
+    </children>
+</component>

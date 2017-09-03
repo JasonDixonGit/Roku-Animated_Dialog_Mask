@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="dialog_mask_screen" extends="Group" initialFocus="button">
+
+    <interface>
+        <!-- Row item selection handlers -->
+        <field id="CategoryListItemSelected" type="intarray" alwaysnotify="true" alias="CategoryList.rowItemSelected"/>
+        
+        <!-- is mask currently covering the screen -->
+        <field id="maskIsVisible" type="boolean" />
+
+        <!-- mask label text -->
+        <field id="MaskLabelText" type="string" alias="MaskLabel.text" />
+
+        <!-- secondaryColor settings -->
+        <field id="MaskLabelColor" type="string" alias="MaskLabel.color" />
+
+    </interface>
+
+    <!-- main handler -->
+    <script type="text/brightscript" uri="pkg:/components/dialog_mask_screen/dialog_mask_screen.brs" />
+    
+
+    <children>
+
+        <Poster
+            translation="[0,0]"
+            uri="pkg:/images/background.jpg"
+            width="1280"
+            height="720"
+        />
+
+        <Rectangle
+            translation="[0,0]"
+            width="1280"
+            height="720"
+            color="0x000000"
+            opacity="0.72"
+        />
+
+        <LabelList
+          id = "button"
+          vertFocusAnimationStyle = "floatingFocus"
+          drawFocusFeedback = "true"
+          drawFocusFeedbackOnTop = "false"
+          focusBitmapUri = "pkg:/Images/focus_button.9.png"
+          focusFootprintBitmapUri="pkg:/Images/focus_empty_square.png"
+          color = "0xFFFFFFFF"
+          focusedColor = "0xffffffFF"
+          textHorizAlign = "center"
+          itemSize = "[150, 40]"
+          translation = "[600,310]"
+          itemSpacing = "[0,10]">
+
+          <ContentNode role = "content">
+              <ContentNode title = "show mask" />
+          </ContentNode>
+        </LabelList>
+
+
+        <Rectangle
+            id="Mask"
+            translation="[1300,0]"
+            width="1280"
+            height="720"
+            color="0x000000"
+            opacity="1"
+            visible = "true"
+        />
+
+        <Label 
+          id = "MaskLabel"
+          height = "44"
+          width = "1280"
+          font = "font:LargeSystemFont"
+          text = ""
+          horizAlign = "center"
+          vertAlign = "center"
+          translation = "[4000,330]" 
+          visible = "true"
+        />
+
+    <Animation 
+      id = "AnimateToShowMask"
+      duration = "1.5"
+      easeFunction = "inOutCubic" >
+
+      <Vector2DFieldInterpolator 
+        id = "MaskVector2D"
+        key = "[ 0.0, 1.0 ]" 
+        keyValue = "[ [1300,0], [0,0] ]"
+        fieldToInterp = "Mask.translation"
+
+      />
+
+      <Vector2DFieldInterpolator 
+        id = "MaskLabelVector2D"
+        key = "[ 0.0, 1.0 ]" 
+        keyValue = "[ [4000,330], [0,330] ]"
+        fieldToInterp = "MaskLabel.translation"
+      />
+    </Animation>
+
+    <Animation 
+      id = "AnimateToHideMask"
+      duration = "1.5"
+      easeFunction = "inOutCubic" >
+
+      <Vector2DFieldInterpolator 
+        id = "MaskVector2D"
+        key = "[ 0.0, 1.0 ]" 
+        keyValue = "[ [0,0],[1300,0] ]"
+        fieldToInterp = "Mask.translation"
+
+      />
+
+      <Vector2DFieldInterpolator 
+        id = "MaskLabelVector2D"
+        key = "[ 0.0, 1.0 ]" 
+        keyValue = "[ [0,330], [4000,330] ]"
+        fieldToInterp = "MaskLabel.translation"
+      />
+    </Animation>
+
+    </children>
+</component>
