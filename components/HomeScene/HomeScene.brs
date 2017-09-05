@@ -6,7 +6,7 @@
 'run initializaion requirements, then run example'
 Function Init()
     m.dialog_mask_screen = m.top.findNode("dialog_mask_screen")
-    m.top.globalSecondaryColor = "#E40090"
+    m.top.globalSecondaryColor = "#B9090B"
     SetAppColors()
     runExample()
 End Function

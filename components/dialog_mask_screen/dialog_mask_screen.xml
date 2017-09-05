@@ -25,17 +25,19 @@
 
       <Poster
         translation="[0,0]"
-        uri="pkg:/images/background.jpg"
+        uri="pkg:/images/background.jpeg"
         width="1280"
         height="720"
       />
 
       <Rectangle
-        translation="[0,0]"
-        width="1280"
-        height="720"
+      	id="labelBackground"
+        translation="[436,310]"
+        width="400"
+        height="60"
         color="0x000000"
-        opacity="0.7"
+        opacity="0.9"
+        visible="true"
       />
 
       <LabelList
@@ -43,14 +45,14 @@
         vertFocusAnimationStyle = "floatingFocus"
         drawFocusFeedback = "false"
         color = "0xFFFFFFFF"
-        focusedColor = "0xE40090FF"
+        focusedColor = "0xB9090BFF"
         textHorizAlign = "center"
         itemSize = "[1280, 60]"
         translation = "[0,310]"
         itemSpacing = "[0,10]">
 
         <ContentNode role = "content">
-          <ContentNode title = "PRESS OK TO SHOW DIALOG MASK" />
+          <ContentNode title = "PRESS OK TO DEMO" />
         </ContentNode>
       </LabelList>
 

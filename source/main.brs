@@ -19,8 +19,7 @@ sub LaunchHomeScene()
         msg = wait(0, m.port)
         msgType = type(msg)
         if msgType = "roSGNodeEvent"
-            
-
+            'keep alive loop
         end if  
     end while
 end sub
